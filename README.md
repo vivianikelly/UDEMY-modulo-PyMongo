@@ -116,3 +116,58 @@ db.carros.remove({
                   marca: "Acura"
                 })
 ```
+
+## Utilizando MongoDB com Python
+
+**Passos iniciais**
+
+Para utilizarmos MongoDB com Python precisamos de uma biblioteca chamada **PyMongo**.
+
+Para instalar o PyMongo é necessário ter o Python devidamente instalado e utilizar os seguintes comandos:
+```
+python3 -m pip install pymongo
+```
+
+Caso já tenha o PyMongo instalado e queira atualizá-lo:
+```
+python3 -m pip install --upgrade pymongo
+```
+
+Os comandos utilizados pelo PyMongo são bem semelhantes aqueles utilizados na linha de comando.
+
+#### Exemplo script PyMongo
+
+```
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017")
+
+database = client["veiculos"]
+
+collection = database["carros"]
+
+new_user = ("name": "Ben", "idade: 18)
+
+collection.insert_one(new_user)
+
+collection.find_one(new_user)
+
+collection.update_one({"name": "Ben"},{"$set":("name": "Joao")})
+
+#collection.delete_one({"name": "Ben"})
+```
+
+**Execução do script:**
+
+```
+python3 pymongo\ script.py
+
+show dbs
+
+use veiculos
+
+db.carros.find()
+
+```
+
+
